@@ -16,5 +16,11 @@ namespace TTNhom_QL
         {
             InitializeComponent();
         }
+
+        private void Form_Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
