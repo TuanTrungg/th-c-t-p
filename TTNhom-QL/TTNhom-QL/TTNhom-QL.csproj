@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_HĐ.cs">
+    <Compile Include="Form_HT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_HĐ.Designer.cs">
-      <DependentUpon>Form_HĐ.cs</DependentUpon>
+    <Compile Include="Form_HT.Designer.cs">
+      <DependentUpon>Form_HT.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -66,16 +66,28 @@
     <Compile Include="Form_NCC.Designer.cs">
       <DependentUpon>Form_NCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forrm_Main.cs">
+    <Compile Include="Form_NHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forrm_Main.Designer.cs">
-      <DependentUpon>Forrm_Main.cs</DependentUpon>
+    <Compile Include="Form_NHang.Designer.cs">
+      <DependentUpon>Form_NHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PXuat.Designer.cs">
+      <DependentUpon>Form_PXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forrm_QLKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forrm_QLKho.Designer.cs">
+      <DependentUpon>Forrm_QLKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_HĐ.resx">
-      <DependentUpon>Form_HĐ.cs</DependentUpon>
+    <EmbeddedResource Include="Form_HT.resx">
+      <DependentUpon>Form_HT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -83,8 +95,14 @@
     <EmbeddedResource Include="Form_NCC.resx">
       <DependentUpon>Form_NCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forrm_Main.resx">
-      <DependentUpon>Forrm_Main.cs</DependentUpon>
+    <EmbeddedResource Include="Form_NHang.resx">
+      <DependentUpon>Form_NHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PXuat.resx">
+      <DependentUpon>Form_PXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forrm_QLKho.resx">
+      <DependentUpon>Forrm_QLKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
