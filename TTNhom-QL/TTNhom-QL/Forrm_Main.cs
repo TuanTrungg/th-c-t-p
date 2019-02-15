@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TTNhom_QL
 {
-    public partial class Forrm_Main : Form
+    public partial class Form_Main : Form
     {
-        public Forrm_Main()
+        public Form_Main()
         {
             InitializeComponent();
         }
