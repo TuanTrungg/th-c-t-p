@@ -16,5 +16,11 @@ namespace TTNhom_QL
         {
             InitializeComponent();
         }
+
+        private void xuấtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_PXuat a = new Form_PXuat();
+            a.ShowDialog();
+        }
     }
 }

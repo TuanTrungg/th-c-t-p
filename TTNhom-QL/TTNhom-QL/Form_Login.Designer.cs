@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.btnOut = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -36,16 +37,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbThongBao = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOut
             // 
+            this.btnOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnOut.Location = new System.Drawing.Point(175, 134);
             this.btnOut.Name = "btnOut";
             this.btnOut.Size = new System.Drawing.Size(81, 31);
             this.btnOut.TabIndex = 11;
             this.btnOut.Text = "Thoát";
             this.btnOut.UseVisualStyleBackColor = true;
+            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
             // 
             // btnLogin
             // 
@@ -55,6 +62,7 @@
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPW
             // 
@@ -99,11 +107,35 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Đăng nhập";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // lbThongBao
+            // 
+            this.lbThongBao.AutoSize = true;
+            this.lbThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lbThongBao.Location = new System.Drawing.Point(56, 168);
+            this.lbThongBao.Name = "lbThongBao";
+            this.lbThongBao.Size = new System.Drawing.Size(41, 13);
+            this.lbThongBao.TabIndex = 13;
+            this.lbThongBao.Text = "asdasd";
+            this.lbThongBao.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1800;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form_Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 190);
+            this.CancelButton = this.btnOut;
+            this.ClientSize = new System.Drawing.Size(296, 196);
+            this.Controls.Add(this.lbThongBao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnOut);
             this.Controls.Add(this.btnLogin);
@@ -115,6 +147,7 @@
             this.Name = "Form_Login";
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Form_Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +162,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lbThongBao;
+        private System.Windows.Forms.Timer timer1;
     }
 }
