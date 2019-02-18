@@ -79,6 +79,7 @@
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click_1);
             // 
             // Tenhang
             // 
@@ -171,6 +172,7 @@
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
             this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.trangChủToolStripMenuItem.Text = "Quay về";
+            this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
             // quảnLýToolStripMenuItem
             // 
@@ -193,6 +195,7 @@
             this.nhàCungCấpToolStripMenuItem.Name = "nhàCungCấpToolStripMenuItem";
             this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nhàCungCấpToolStripMenuItem.Text = "Nhà cung cấp";
+            this.nhàCungCấpToolStripMenuItem.Click += new System.EventHandler(this.nhàCungCấpToolStripMenuItem_Click_1);
             // 
             // hóaĐơnToolStripMenuItem
             // 
@@ -208,24 +211,28 @@
             this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
             this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
+            this.nhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem_Click_1);
             // 
             // xuấtHàngToolStripMenuItem
             // 
             this.xuấtHàngToolStripMenuItem.Name = "xuấtHàngToolStripMenuItem";
             this.xuấtHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.xuấtHàngToolStripMenuItem.Text = "Xuất hàng";
+            this.xuấtHàngToolStripMenuItem.Click += new System.EventHandler(this.xuấtHàngToolStripMenuItem_Click_1);
             // 
             // chiTiếtToolStripMenuItem
             // 
             this.chiTiếtToolStripMenuItem.Name = "chiTiếtToolStripMenuItem";
             this.chiTiếtToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.chiTiếtToolStripMenuItem.Text = "Chi tiết";
+            this.chiTiếtToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtToolStripMenuItem_Click_1);
             // 
             // cậpNhậtToolStripMenuItem
             // 
             this.cậpNhậtToolStripMenuItem.Name = "cậpNhậtToolStripMenuItem";
             this.cậpNhậtToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.cậpNhậtToolStripMenuItem.Text = "Cập nhật";
+            this.cậpNhậtToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtToolStripMenuItem_Click_1);
             // 
             // btnSearch
             // 

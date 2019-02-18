@@ -85,6 +85,7 @@
             this.cậpNhậtToolStripMenuItem.Name = "cậpNhậtToolStripMenuItem";
             this.cậpNhậtToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.cậpNhậtToolStripMenuItem.Text = "Cập nhật";
+            this.cậpNhậtToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -236,6 +237,7 @@
             this.chiTiếtToolStripMenuItem.Name = "chiTiếtToolStripMenuItem";
             this.chiTiếtToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.chiTiếtToolStripMenuItem.Text = "Chi tiết";
+            this.chiTiếtToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 

@@ -56,5 +56,16 @@ namespace TTNhom_QL
             Form_PXuat a = new Form_PXuat();
             a.ShowDialog();
         }
+
+        private void chiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Quản lý bán Vali các kiểu các loại", "Chi tiết");
+        }
+
+        private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Phiên bản hiện tại: 1 \nKhông có cập nhật mới", "Cập nhật");
+
+        }
     }
 }
