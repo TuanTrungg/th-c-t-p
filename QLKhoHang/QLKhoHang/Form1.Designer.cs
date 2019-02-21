@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ten = new System.Windows.Forms.TextBox();
@@ -39,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 23);
+            this.label1.Location = new System.Drawing.Point(28, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 68);
+            this.label2.Location = new System.Drawing.Point(28, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // ten
             // 
-            this.ten.Location = new System.Drawing.Point(101, 20);
+            this.ten.Location = new System.Drawing.Point(105, 35);
             this.ten.Name = "ten";
             this.ten.Size = new System.Drawing.Size(143, 20);
             this.ten.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(101, 68);
+            this.pass.Location = new System.Drawing.Point(105, 83);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(143, 20);
             this.pass.TabIndex = 3;
@@ -74,7 +75,7 @@
             // 
             // dangnhap
             // 
-            this.dangnhap.Location = new System.Drawing.Point(27, 116);
+            this.dangnhap.Location = new System.Drawing.Point(47, 131);
             this.dangnhap.Name = "dangnhap";
             this.dangnhap.Size = new System.Drawing.Size(76, 31);
             this.dangnhap.TabIndex = 4;
@@ -84,7 +85,8 @@
             // 
             // thoat
             // 
-            this.thoat.Location = new System.Drawing.Point(168, 116);
+            this.thoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.thoat.Location = new System.Drawing.Point(161, 131);
             this.thoat.Name = "thoat";
             this.thoat.Size = new System.Drawing.Size(87, 31);
             this.thoat.TabIndex = 5;
@@ -94,15 +96,19 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.dangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 175);
+            this.CancelButton = this.thoat;
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(296, 174);
             this.Controls.Add(this.thoat);
             this.Controls.Add(this.dangnhap);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.ten);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
