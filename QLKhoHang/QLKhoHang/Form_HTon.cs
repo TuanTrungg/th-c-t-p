@@ -21,7 +21,7 @@ namespace QLKhoHang
         //Trung:"Data Source=TUANTRUNG\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True"
         //Cường:
         //Đạt:
-        //Sao:Data Source=DESKTOP-E2PPPUQ\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True
+        //Sao:
 
         SqlConnection con = new SqlConnection(@"Data Source=TUANTRUNG\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True");
         private void KetNoiCSDL()
