@@ -22,7 +22,7 @@ namespace QLKhoHang
         //Đạt:
         //Sao:
 
-        SqlConnection con = new SqlConnection(@"Data Source=TUANTRUNG\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True");
         private void KetNoiCSDL()
         {
             string sql = "select * from PHIEUNHAP"; //lấy hết dữ liệu trong bảng hàng tồn

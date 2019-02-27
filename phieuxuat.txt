@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,21 +18,21 @@ namespace QLKhoHang
             InitializeComponent();
         }
         //Trung:"Data Source=TUANTRUNG\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True"
-        //Cường:
-        //Đạt:
+        //Cu?ng:
+        //�?t:
         //Sao:
 
         SqlConnection con = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLVali;Integrated Security=True");
         private void KetNoiCSDL()
         {
-            string sql = "select * from PHIEUXUAT"; //lấy hết dữ liệu trong bảng hàng tồn
-            SqlCommand com = new SqlCommand(sql, con);// chúng ta bắt đầu truy vấn
+            string sql = "select * from PHIEUXUAT"; //l?y h?t d? li?u trong b?ng h�ng t?n
+            SqlCommand com = new SqlCommand(sql, con);// ch�ng ta b?t d?u truy v?n
             com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com);//chuyển dữ liệu về
+            SqlDataAdapter da = new SqlDataAdapter(com);//chuy?n d? li?u v?
             SqlDataReader dr = com.ExecuteReader();
             DataTable dt = new DataTable();
-            //tạo kho  ảo để lưu dữ liệu
-            dt.Load(dr);//đổ dữ liệu vào kho
+            //t?o kho  ?o d? luu d? li?u
+            dt.Load(dr);//d? d? li?u v�o kho
             dataGridView1.DataSource = dt;
         }
         private void LoadData()
@@ -68,7 +68,7 @@ namespace QLKhoHang
         {
             if (textBox1.Text == "")
             {
-                MessageBox.Show("Mã phiếu xuất không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("M� phi?u xu?t kh�ng du?c d? tr?ng!", "L?i", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -77,7 +77,7 @@ namespace QLKhoHang
         {
             if (textBox2.Text == "")
             {
-                MessageBox.Show("Mã hàng xuất không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("M� h�ng xu?t kh�ng du?c d? tr?ng!", "L?i", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -90,7 +90,7 @@ namespace QLKhoHang
             }
             return false;
         }
-        private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
+        private void trangCh?ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             Form_Main TRANGCHU = new Form_Main();
@@ -98,52 +98,52 @@ namespace QLKhoHang
             TRANGCHU.nCCToolStripMenuItem.Enabled = true;
             TRANGCHU.pHIEUNHAPToolStripMenuItem.Enabled = true;
             TRANGCHU.pHIEUXUATToolStripMenuItem.Enabled = true;
-            TRANGCHU.đăngNhậpToolStripMenuItem.Enabled = false;
-            TRANGCHU.thoátToolStripMenuItem.Enabled = true;
+            TRANGCHU.dangNh?pToolStripMenuItem.Enabled = false;
+            TRANGCHU.tho�tToolStripMenuItem.Enabled = true;
             TRANGCHU.label1.Visible = true;
         }
 
-        private void hàngTồnToolStripMenuItem_Click(object sender, EventArgs e)
+        private void h�ngT?nToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             Form_HTon HANGTON = new Form_HTon();
             HANGTON.Show();
         }
 
-        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nh�CungC?pToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             Form_NCC NHACUNGCAP = new Form_NCC();
             NHACUNGCAP.Show();
         }
 
-        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nh?pH�ngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
             Form_HNhap NHAPHANG = new Form_HNhap();
             NHAPHANG.Show();
         }
 
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tho�tToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void cậpNhậtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void c?pNh?tToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Phiên bản hiện tại là phiên bản 1.Hiện chưa có phiên bản mới", "Cập nhật");
+            MessageBox.Show("Phi�n b?n hi?n t?i l� phi�n b?n 1.Hi?n chua c� phi�n b?n m?i", "C?p nh?t");
         }
 
-        private void chiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void chiTi?tToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Nhóm Quản Lý Bán Hàng Vali. Lớp : CDTHK17", "Chi tiết");
+            MessageBox.Show("Nh�m Qu?n L� B�n H�ng Vali. L?p : CDTHK17", "Chi ti?t");
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            con.Open();//chúng ta mở kết nối
-            KetNoiCSDL();//gọi lại hàm kết nối
-            LoadData();//Gọi lại hàm load dữ lieu
+            con.Open();//ch�ng ta m? k?t n?i
+            KetNoiCSDL();//g?i l?i h�m k?t n?i
+            LoadData();//G?i l?i h�m load d? lieu
             button2.Enabled = false;
         }
 
@@ -183,7 +183,7 @@ namespace QLKhoHang
             try
             {
                 add.ExecuteNonQuery();
-                MessageBox.Show("Thành công", "Xuất hàng trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Th�nh c�ng", "Xu?t h�ng trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 KetNoiCSDL();
                 LoadData();
                 button3.Enabled = true;
@@ -193,11 +193,11 @@ namespace QLKhoHang
             {
                 if (exc.Number == 2627)
                 {
-                    MessageBox.Show("Mã hàng đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("M� h�ng d� t?n t?i", "L?i", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi" + exc.Number, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("L?i kh�ng x�c d?nh:\n" + exc.Message, "L?i" + exc.Number, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             button2.Enabled = false;
@@ -237,22 +237,22 @@ namespace QLKhoHang
                 try
                 {
                     del.ExecuteNonQuery();
-                    MessageBox.Show("Xóa thành công", "Xóa nhà cung cấp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("X�a th�nh c�ng", "X�a nh� cung c?p", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     KetNoiCSDL();
                     LoadData();
                 }
                 catch (SqlException exc)
                 {
-                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("L?i kh�ng x�c d?nh:\n" + exc.Message, "L?i", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("Chọn phiếu xuất cần xóa", "Xóa hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ch?n phi?u xu?t c?n x�a", "X�a h�ng", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("lêu lêu k in=))))");
+            MessageBox.Show("l�u l�u k in=))))");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -272,7 +272,7 @@ namespace QLKhoHang
             try
             {
                 upd.ExecuteNonQuery();
-                MessageBox.Show("Cập nhật thành công", "Sửa thông tin xuất trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("C?p nh?t th�nh c�ng", "S?a th�ng tin xu?t trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 KetNoiCSDL();
                 LoadData();
             }
@@ -280,11 +280,11 @@ namespace QLKhoHang
             {
                 if (exc.Number == 2627)
                 {
-                    MessageBox.Show("Mã phiếu xuất đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("M� phi?u xu?t d� t?n t?i", "L?i", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("L?i kh�ng x�c d?nh:\n" + exc.Message, "L?i", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
