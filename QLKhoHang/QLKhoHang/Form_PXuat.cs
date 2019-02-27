@@ -168,7 +168,39 @@ namespace QLKhoHang
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            String Them = "INSERT INTO PHIEUXUAT VALUES (@Idphieux,@Idhang,@Tenhang,@Dvt,@Luongxuat,@Giaxuat,@Thanhtien)";
+            SqlCommand add = new SqlCommand(Them, con);
+            if (kiemtra())
+            {
+                add.Parameters.AddWithValue("Idphieux", textBox1.Text);
+                add.Parameters.AddWithValue("Idhang", textBox2.Text);
+                add.Parameters.AddWithValue("Tenhang", textBox3.Text);
+                add.Parameters.AddWithValue("Dvt", textBox4.Text);
+                add.Parameters.AddWithValue("Luongxuat", textBox5.Text);
+                add.Parameters.AddWithValue("Giaxuat", textBox6.Text);
+                add.Parameters.AddWithValue("Thanhtien", textBox7.Text);
+            }
+            try
+            {
+                add.ExecuteNonQuery();
+                MessageBox.Show("Thành công", "Xuất hàng trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KetNoiCSDL();
+                LoadData();
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+            catch (SqlException exc)
+            {
+                if (exc.Number == 2627)
+                {
+                    MessageBox.Show("Mã hàng đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi" + exc.Number, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            button2.Enabled = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -180,8 +212,8 @@ namespace QLKhoHang
             find.Parameters.AddWithValue("Idhang", textBox2.Text);
             find.Parameters.AddWithValue("Dvt", textBox4.Text);
             find.Parameters.AddWithValue("Luongxuat", textBox5.Text);
-            find.Parameters.AddWithValue("Thanhtien", textBox7.Text);
             find.Parameters.AddWithValue("Giaxuat", textBox6.Text);
+            find.Parameters.AddWithValue("Thanhtien", textBox7.Text);
             SqlDataReader dr = find.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
@@ -220,7 +252,41 @@ namespace QLKhoHang
 
         private void button6_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("lêu lêu k in=))))");
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String Sua = "UPDATE PHIEUXUAT SET Idhang = @Idhang,Tenhang = @Tenhang,Dvt = @Dvt,Luongxuat = @Luongxuat,Giaxuat = @Giaxuat,Thanhtien = @Thanhtien WHERE Idphieux = @Idphieux";
+            SqlCommand upd = new SqlCommand(Sua, con);
+            if (kiemtra())
+            {
+                upd.Parameters.AddWithValue("Idphieux", textBox1.Text);
+                upd.Parameters.AddWithValue("Idhang", textBox2.Text);
+                upd.Parameters.AddWithValue("Tenhang", textBox3.Text);
+                upd.Parameters.AddWithValue("Dvt", textBox4.Text);
+                upd.Parameters.AddWithValue("Luongxuat", textBox5.Text);
+                upd.Parameters.AddWithValue("Giaxuat", textBox6.Text);
+                upd.Parameters.AddWithValue("Thanhtien", textBox7.Text);
+            }
+            try
+            {
+                upd.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật thành công", "Sửa thông tin xuất trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KetNoiCSDL();
+                LoadData();
+            }
+            catch (SqlException exc)
+            {
+                if (exc.Number == 2627)
+                {
+                    MessageBox.Show("Mã phiếu xuất đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

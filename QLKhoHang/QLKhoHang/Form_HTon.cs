@@ -130,18 +130,18 @@ namespace QLKhoHang
         private void button1_Click(object sender, EventArgs e)
         {
             Clear();
-            textBox4.Enabled = true;
-            textBox5.Enabled = true;
-            textBox6.Enabled = true;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button2.Enabled = true;
-            //textBox4.Enabled = false;
-            //textBox5.Enabled = false;
-            //textBox6.Enabled = false;
+            //textBox4.Enabled = true;
+            //textBox5.Enabled = true;
+            //textBox6.Enabled = true;
             //button3.Enabled = false;
             //button4.Enabled = false;
             //button2.Enabled = true;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
+            textBox6.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button2.Enabled = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

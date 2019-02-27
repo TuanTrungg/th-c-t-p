@@ -76,6 +76,7 @@ namespace QLKhoHang
             return true;
         }
         private bool mah()
+
         {
             if (textBox2.Text == "")
             {
@@ -162,17 +163,50 @@ namespace QLKhoHang
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            String Them = "INSERT INTO PHIEUNHAP VALUES (@Idphieun,@Idhang,@Idncc,@Tenhang,@Dvt,@Luongnhap,@Gianhap,@Thanhtien)";
+            SqlCommand add = new SqlCommand(Them, con);
+            if (kiemtra())
+            {
+                add.Parameters.AddWithValue("Idphieun", textBox1.Text);
+                add.Parameters.AddWithValue("Idhang", textBox2.Text);
+                add.Parameters.AddWithValue("Idncc", textBox3.Text);
+                add.Parameters.AddWithValue("Tenhang", textBox4.Text);
+                add.Parameters.AddWithValue("Dvt", textBox5.Text);
+                add.Parameters.AddWithValue("Luongnhap", textBox6.Text);
+                add.Parameters.AddWithValue("Gianhap", textBox7.Text);
+                add.Parameters.AddWithValue("Thanhtien", textBox8.Text);
+            }
+            try
+            {
+                add.ExecuteNonQuery();
+                MessageBox.Show("Thành công", "Thêm phiếu trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KetNoiCSDL();
+                LoadData();
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+            catch (SqlException exc)
+            {
+                if (exc.Number == 2627)
+                {
+                    MessageBox.Show("Mã phiếu đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi" + exc.Number, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            button2.Enabled = false;
         }
 
         private void chiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Nhóm Quản Lý Bán Hàng Vali. Lớp : CDTHK17", "Chi tiết");
+            MessageBox.Show("Nhóm Quản Lý Kho Vali Lớp : CDTH18", "Thông báo");
         }
 
         private void cậpNhậtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Phiên bản hiện tại là phiên bản 1.Hiện chưa có phiên bản mới", "Cập nhật");
+            MessageBox.Show("Phiên bản hiện tại là phiên bản 1\nHiện chưa có phiên bản mới", "Thông báo");
         }
 
         private void Form5_FormClosed(object sender, FormClosedEventArgs e)
@@ -204,6 +238,77 @@ namespace QLKhoHang
             dt.Load(dr);
             dataGridView1.DataSource = dt;
             LoadData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String Sua = "UPDATE PHIEUNHAP SET Idhang = @Idhang,Idncc = @Idncc,Tenhang = @Tenhang ,Dvt = @Dvt,Luongnhap = @Luongnhap,Gianhap = @Gianhap,Thanhtien = @Thanhtien WHERE Idphieun = @Idphieun";
+            SqlCommand upd = new SqlCommand(Sua, con);
+            if (kiemtra())
+            {
+                upd.Parameters.AddWithValue("Idphieun", textBox1.Text);
+                upd.Parameters.AddWithValue("Idhang", textBox2.Text);
+                upd.Parameters.AddWithValue("Idncc", textBox3.Text);
+                upd.Parameters.AddWithValue("Tenhang", textBox4.Text);
+                upd.Parameters.AddWithValue("Dvt", textBox5.Text);
+                upd.Parameters.AddWithValue("Luongnhap", textBox6.Text);
+                upd.Parameters.AddWithValue("Gianhap", textBox7.Text);
+                upd.Parameters.AddWithValue("Thanhtien", textBox8.Text);
+            }
+            try
+            {
+                upd.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật thành công", "Sửa thông tin hàng nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KetNoiCSDL();
+                LoadData();
+            }
+            catch (SqlException exc)
+            {
+                if (exc.Number == 2627)
+                {
+                    MessageBox.Show("Mã phiếu đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String Sua = "DELETE FROM PHIEUNHAP WHERE Idphieun = @Idphieun";
+            SqlCommand del = new SqlCommand(Sua, con);
+            if (kiemtra())
+            {
+                del.Parameters.AddWithValue("Idphieun", textBox1.Text);
+                del.Parameters.AddWithValue("Idhang", textBox2.Text);
+                del.Parameters.AddWithValue("Idncc", textBox3.Text);
+                del.Parameters.AddWithValue("Tenhang", textBox4.Text);
+                del.Parameters.AddWithValue("Dvt", textBox5.Text);
+                del.Parameters.AddWithValue("Luongnhap", textBox6.Text);
+                del.Parameters.AddWithValue("Gianhap", textBox7.Text);
+                del.Parameters.AddWithValue("Thanhtien", textBox8.Text);
+
+                try
+                {
+                    del.ExecuteNonQuery();
+                    MessageBox.Show("Xóa thành công", "Xóa phiếu nhập trong kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    KetNoiCSDL();
+                    LoadData();
+                }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show("Lỗi không xác định:\n" + exc.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+                MessageBox.Show("Chọn phiếu nhập cần xóa", "Xóa phiếu nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

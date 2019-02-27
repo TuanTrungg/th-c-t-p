@@ -242,6 +242,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "Sửa ";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -251,6 +252,7 @@
             this.button4.TabIndex = 20;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -260,6 +262,7 @@
             this.button5.TabIndex = 21;
             this.button5.Text = "In";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -457,7 +460,7 @@
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
-            // Form5
+            // Form_HNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -491,7 +494,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Form5";
+            this.Name = "Form_HNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn nhập hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);
